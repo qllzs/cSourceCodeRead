@@ -1,7 +1,15 @@
-all: httpd
+CC?= gcc
+CFLAGS?= -W -Wall 
+LIBS?=  -lpthread #linux build no need -lsocket
 
-httpd: httpd.c
-	gcc -W -Wall -lsocket -lpthread -o httpd httpd.c
+Target = httpd
+Source= httpd.c
 
+all: $(Target)
+
+$(Target): $(Source)
+	$(CC) $(CFLAGS)  -o $(Target) $(Source) $(LIBS)
+
+.Phony:clean
 clean:
-	rm httpd
+	rm $(Target)

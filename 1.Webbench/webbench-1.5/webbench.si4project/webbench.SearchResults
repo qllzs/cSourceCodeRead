@@ -1,0 +1,4 @@
+---- optind Matches (3 in 1 files) ----
+main in webbench.c :  if(optind==argc) {
+main in webbench.c :  build_request(argv[optind]);
+main in webbench.c :  printf(" %s",argv[optind]);
